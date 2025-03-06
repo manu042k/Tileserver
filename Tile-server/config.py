@@ -1,3 +1,7 @@
+"""
+This module is used to configure the tile server. It reads the TIFF file path from the environment variable
+TIFF_FILE_PATH, or uses a default path if the environment variable is not set.
+"""
 import os
 from pathlib import Path
 from logger import setup_logger

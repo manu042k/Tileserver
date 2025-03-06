@@ -1,3 +1,6 @@
+"""
+Service for processing and generating map tiles from GeoTIFF data.
+"""
 import io
 import numpy as np
 import rasterio
@@ -14,8 +17,9 @@ from logger import setup_logger
 logger = setup_logger('tile_service')
 
 class TileService:
-    """Service for processing and generating map tiles from GeoTIFF data."""
-    
+    """"
+    Service for processing and generating map tiles from GeoTI
+    """    
     # Define standard projections
     WEB_MERCATOR = CRS.from_epsg(3857)
     WGS84 = CRS.from_epsg(4326)

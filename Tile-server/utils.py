@@ -1,3 +1,6 @@
+"""
+Utility functions for the tile server.
+"""
 import math
 from pathlib import Path
 import os

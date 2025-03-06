@@ -1,3 +1,6 @@
+"""
+Main module for the GeoTIFF Tile Server.
+"""
 import uvicorn
 from pathlib import Path
 from fastapi import FastAPI, HTTPException, Response
