@@ -9,8 +9,11 @@ from logger import setup_logger
 # Setup logger for this module
 logger = setup_logger('config')
 
+TIFF_Name = "snowdepth.tiff"       #Edit this to change the name of the tiff file
+
 # Make TIFF file path configurable via environment variable
-DEFAULT_TIFF_PATH = Path(__file__).parent / "TIFF-Storrage" / "snowdepth.tiff"
+
+DEFAULT_TIFF_PATH = Path(__file__).parent / "TIFF-Storrage" / TIFF_Name
 TIFF_FILE = os.environ.get("TIFF_FILE_PATH", str(DEFAULT_TIFF_PATH))
 
 logger.info(f"Using TIFF file path: {TIFF_FILE}")
