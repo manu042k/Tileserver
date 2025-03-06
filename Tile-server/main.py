@@ -1,10 +1,8 @@
 import uvicorn
 from pathlib import Path
-from fastapi import FastAPI, HTTPException, Response, Request
+from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
 import sys
-import time
-import os
 
 # Add the parent directory to path to enable imports
 sys.path.append(str(Path(__file__).parent.parent))

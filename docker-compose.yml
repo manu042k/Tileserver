@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  tileserver-service:
+    build:
+      context: ./Tile-server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TIFF_FILE=/app/data/snowdepth.tiff
+    restart: unless-stopped
+
+  mapbox-service:
+    build:
+      context: ./mapbox
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_TILE_SERVER_URL=http://localhost:8000/tiles/{z}/{x}/{y}.png
+    depends_on:
+      - tileserver-service
